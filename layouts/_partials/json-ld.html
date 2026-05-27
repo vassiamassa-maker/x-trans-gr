@@ -9,7 +9,7 @@
   "email" $c.email
   "telephone" (index $phones 0)
   "faxNumber" $c.fax
-  "image" (printf "%s%s" (strings.TrimSuffix "/" site.BaseURL) "/images/og-image.png")
+  "image" (printf "%s%s" (strings.TrimSuffix "/" site.BaseURL) "/images/og-image.jpg")
   "address" (dict
     "@type" "PostalAddress"
     "streetAddress" $c.street

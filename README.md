@@ -32,7 +32,7 @@ content/english/      English pages (served under /en/)
 data/theme.json       Brand colours + fonts (re-run build after editing)
 i18n/{el,en}.yaml     UI string translations
 layouts/              Project overrides (logo, header, services, financial, contact, json-ld, head)
-assets/images/        Source images (Hugo processes → responsive WebP)
+assets/images/        Source images (Hugo processes → responsive WebP) — provenance in CREDITS.md
 static/_redirects     301s from the old Blogger URLs (Cloudflare Pages)
 static/docs/          Drop balance-sheet PDFs here
 themes/hugoplate/     Theme (do not edit; override in /layouts instead)
