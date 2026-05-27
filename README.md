@@ -71,14 +71,23 @@ Connect the repo in the Cloudflare dashboard with:
 | Framework preset | Hugo |
 | Build command | `npm run build` |
 | Build output directory | `public` |
-| Environment variables | `HUGO_VERSION = 0.162.0`, `GO_VERSION = 1.23.3`, `NODE_VERSION = 24` |
+| Environment variables | `HUGO_VERSION = 0.162.0`, `GO_VERSION = 1.23.3`, `NODE_VERSION = 24`, `HUGO_BASEURL = <deployment URL>` |
 
 > **Node 24+ is required.** Hugo's Tailwind CSS v4 step runs the Tailwind CLI with Node's
 > `--permission` flag, which only exists from Node 23.5 onward — Node 20/22 builds fail with
 > `node: bad option: --permission`. The `.nvmrc` pins Node 24; note the dashboard `NODE_VERSION`
 > environment variable **overrides** `.nvmrc`, so it must also be 24.
 
-Then add `www.x-trans.gr` as a custom domain (HTTPS is automatic). The
+**baseURL / `HUGO_BASEURL`.** The `build` script sets Hugo's `baseURL` from, in order of priority:
+`HUGO_BASEURL` → `CF_PAGES_URL` → the config default (`https://www.x-trans.gr`). Getting this right
+matters because absolute references (canonical, `og:image`, the search index `searchindex.json`)
+must match the host being served, or the browser makes cross-origin requests to the wrong domain.
+Cloudflare's current build system does **not** reliably expose `CF_PAGES_URL`, so set `HUGO_BASEURL`
+explicitly per environment:
+- **While testing on the pages.dev URL:** `HUGO_BASEURL = https://x-trans-gr-site.pages.dev`
+- **At launch (custom domain):** `HUGO_BASEURL = https://www.x-trans.gr`
+
+Add `www.x-trans.gr` as a custom domain (HTTPS is automatic) when going live. The
 [`static/_redirects`](static/_redirects) file 301-redirects the old Blogger URLs to preserve SEO.
 
 > Enable **Cloudflare Web Analytics** for the site and paste the beacon token into
