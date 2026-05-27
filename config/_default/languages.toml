@@ -12,6 +12,10 @@ locale = "en-us"
 contentDir = "content/english"
 weight = 2
 
+  # English overrides of root params.toml values.
+  [en.params]
+  copyright = "© X-TRANS Ltd — International Transport & Logistics"
+
   # English overrides of the Greek root [company] block (params.toml).
   # Phone, fax, email and map coordinates are inherited from the root.
   [en.params.company]
