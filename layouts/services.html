@@ -1,0 +1,38 @@
+{{ define "main" }}
+  {{ partial "page-header" . }}
+
+  <section class="section-sm">
+    <div class="container">
+      {{ with .Content }}
+        <div class="row justify-center">
+          <div class="md:col-10 lg:col-8 content text-center mb-12">{{ . }}</div>
+        </div>
+      {{ end }}
+
+      <div class="row gx-5">
+        {{ range .Params.service_groups }}
+          <div class="lg:col-4 md:col-6 mb-8">
+            <div class="bg-light dark:bg-darkmode-light h-full rounded-xl p-8">
+              {{ with .icon }}
+                <span class="text-primary dark:text-darkmode-primary mb-5 inline-flex h-14 w-14 items-center justify-center rounded-full bg-white text-2xl dark:bg-darkmode-body">
+                  <i class="{{ . }}"></i>
+                </span>
+              {{ end }}
+              <h2 class="h4 mb-5">{{ .title }}</h2>
+              <ul>
+                {{ range .items }}
+                  <li class="border-border dark:border-darkmode-border relative border-b py-2.5 pl-6 last:border-0">
+                    <i class="fa fa-check text-primary dark:text-darkmode-primary absolute left-0 top-3.5"></i>
+                    {{ . | markdownify }}
+                  </li>
+                {{ end }}
+              </ul>
+            </div>
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  {{ partial "call-to-action" . }}
+{{ end }}

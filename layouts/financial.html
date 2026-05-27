@@ -1,0 +1,36 @@
+{{ define "main" }}
+  {{ partial "page-header" . }}
+
+  <section class="section-sm">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="md:col-10 lg:col-8">
+          {{ with .Content }}<div class="content mb-10">{{ . }}</div>{{ end }}
+
+          {{ with .Params.documents }}
+            <ul class="space-y-4">
+              {{ range . }}
+                <li>
+                  <a
+                    href="{{ .url | relURL }}"
+                    class="bg-light dark:bg-darkmode-light hover:text-primary dark:hover:text-darkmode-primary flex items-center justify-between rounded-lg px-6 py-5 transition"
+                    {{ if .external }}target="_blank" rel="noopener"{{ end }}>
+                    <span class="flex items-center font-medium">
+                      <i class="fa-regular fa-file-pdf text-primary dark:text-darkmode-primary mr-4 text-2xl"></i>
+                      {{ .label }}
+                    </span>
+                    <i class="fa-solid fa-download"></i>
+                  </a>
+                </li>
+              {{ end }}
+            </ul>
+          {{ else }}
+            <div class="bg-light dark:bg-darkmode-light rounded-lg px-6 py-8 text-center">
+              {{ .Params.empty_message | default "" | markdownify }}
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </section>
+{{ end }}

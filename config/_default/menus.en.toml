@@ -1,0 +1,44 @@
+############# English navigation ##############
+
+# main menu
+[[main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[main]]
+name = "Company"
+url = "/about/"
+weight = 2
+
+[[main]]
+name = "Services"
+url = "/services/"
+weight = 3
+
+[[main]]
+name = "Financial Statements"
+url = "/financial-statements/"
+weight = 4
+
+[[main]]
+name = "Contact"
+url = "/contact/"
+weight = 5
+
+
+# footer menu
+[[footer]]
+name = "Company"
+url = "/about/"
+weight = 1
+
+[[footer]]
+name = "Services"
+url = "/services/"
+weight = 2
+
+[[footer]]
+name = "Contact"
+url = "/contact/"
+weight = 3

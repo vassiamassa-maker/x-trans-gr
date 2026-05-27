@@ -1,0 +1,30 @@
+{{/* LocalBusiness / MovingCompany structured data, emitted once site-wide. */}}
+{{ $c := site.Params.company }}
+{{ $phones := $c.phone }}
+{{- $data := dict
+  "@context" "https://schema.org"
+  "@type" "MovingCompany"
+  "name" $c.legal_name
+  "url" site.BaseURL
+  "email" $c.email
+  "telephone" (index $phones 0)
+  "faxNumber" $c.fax
+  "image" (printf "%s%s" (strings.TrimSuffix "/" site.BaseURL) "/images/og-image.png")
+  "address" (dict
+    "@type" "PostalAddress"
+    "streetAddress" $c.street
+    "addressLocality" $c.city
+    "postalCode" $c.postal_code
+    "addressCountry" $c.country
+  )
+  "geo" (dict
+    "@type" "GeoCoordinates"
+    "latitude" $c.map_lat
+    "longitude" $c.map_lon
+  )
+  "openingHours" "Mo-Fr 08:00-17:00"
+  "areaServed" "Worldwide"
+-}}
+<script type="application/ld+json">
+{{ $data | jsonify (dict "indent" "  ") | safeJS }}
+</script>

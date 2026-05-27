@@ -1,0 +1,143 @@
+#################### default parameters ############################
+# favicon module: https://github.com/gethugothemes/hugo-modules/tree/master/images#favicon-implementation
+favicon = "images/favicon.png"
+# logo module: https://github.com/gethugothemes/hugo-modules/tree/master/images#logo-implementation
+# Logo intentionally left empty so the text wordmark (logo_text) is used instead.
+logo = ""
+logo_darkmode = ""
+# use `px` or `x` with logo_width, example: "100px".
+# Note: logo_width is not work with .svg file
+logo_width = "160px"
+logo_height = "32px"
+# if logo_webp set false, will not generate WEBP version of logo | default is true
+logo_webp = true
+# logo text will only show when logo is missing.
+logo_text = "X-TRANS"
+# navbar fixed to top
+navbar_fixed = true
+# theme-mode
+theme_switcher = true
+theme_default = "system" # available options [light/dark/system]
+# Main Sections
+mainSections = []
+# contact form action
+contact_form_action = "#" # not used: the contact page shows direct contact details + map
+# google tag manager, see https://developers.google.com/tag-manager/
+google_tag_manager = "" # example: G-XXXXXXXXXX
+google_adsense = ""     # example: ca-pub-xxxxxxxxxxxxxxxx
+# custom script on header — Cloudflare Web Analytics (cookieless, no consent banner needed).
+# Replace data-cf-beacon token with the one from your Cloudflare dashboard before/after deploy.
+custom_script = '''<!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "REPLACE_WITH_CLOUDFLARE_TOKEN"}'></script><!-- End Cloudflare Web Analytics -->'''
+# copyright
+copyright = "© X-TRANS Ε.Π.Ε. — Διεθνείς Μεταφορές & Logistics"
+
+# Preloader
+# preloader module: https://github.com/gethugothemes/hugo-modules/tree/master/components/preloader
+[preloader]
+enable = false
+preloader = "" # use jpg, png, svg or gif format.
+
+# Navigation button — call-to-action in the navbar (click to call)
+[navigation_button]
+enable = true
+label = "+30 210 4100818"
+link = "tel:+302104100818"
+
+# LLMs Configuration
+# LLMs module: https://github.com/gethugothemes/hugo-modules/tree/master/llms-txt
+[llms]
+# Set to false to disable /llms.txt generation
+generate_llms_txt = true
+# Set to false to disable /llms-full.txt generation
+generate_llms_full_txt = true
+# Limit to specific paths (e.g. "/about/", "/blog/*", "/blog/**"). Empty = all pages.
+include = []
+# Exclude specific paths (same wildcard formats as include). Include takes priority on conflicts.
+exclude = []
+
+# search
+# search module: https://github.com/gethugothemes/hugo-modules/tree/master/search
+[search]
+enable = false
+primary_color = "#052E4A"
+include_sections = ["blog"]
+show_image = true
+show_description = true
+show_tags = true
+show_categories = true
+
+# announcement
+# announcement module: https://github.com/gethugothemes/hugo-modules/tree/master/components/announcement
+[announcement]
+enable = false
+expire_days = 7
+content = ""
+
+# seo meta data for OpenGraph / Twitter Card
+# seo module: https://github.com/gethugothemes/hugo-modules/tree/master/seo-tools/basic-seo
+[metadata]
+keywords = ["μεταφορές", "logistics", "διεθνείς μεταφορές", "εκτελωνισμοί", "αποθήκευση", "διανομές", "Πειραιάς", "freight forwarding", "customs clearance", "warehousing", "Greece"]
+description = "Η X-TRANS Ε.Π.Ε. παρέχει διεθνείς και εθνικές μεταφορές, εκτελωνισμούς, αποθήκευση και διανομές εμπορευμάτων με έδρα τον Πειραιά."
+author = "X-TRANS Ε.Π.Ε."
+twitter = ""
+image = "images/og-image.jpg"
+
+
+# site verifications
+# verification module: https://github.com/gethugothemes/hugo-modules/tree/master/seo-tools/site-verifications
+[site_verification]
+google = ""   # Your verification code
+bing = ""     # Your verification code
+baidu = ""    # Your verification code
+facebook = "" # Your verification code
+mastodon = "" # Your verification code
+
+# cookies
+# cookies module: https://github.com/gethugothemes/hugo-modules/tree/master/components/cookie-consent
+[cookies]
+enable = false
+expire_days = 60
+content = "This site uses cookies. By continuing to use this website, you agree to their use."
+button = "I Accept"
+
+# diagrams
+[mermaid]
+js_url = 'https://cdn.jsdelivr.net/npm/mermaid@latest/dist/mermaid.esm.min.mjs'
+
+######################## sidebar widgets #########################
+[widgets]
+sidebar = ["categories", "tags"]
+
+
+# google map
+[google_map]
+enable = false
+map_api_key = "AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU"
+map_latitude = "51.5223477"
+map_longitude = "-0.1622023"
+map_marker = "images/marker.png"
+
+
+# Company contact details (used by the contact page, footer and JSON-LD schema)
+[company]
+legal_name = "X-TRANS Ε.Π.Ε."
+street = "Βασιλαδίου 6 & Μυκάλης"
+city = "Πειραιάς"
+postal_code = "18540"
+country = "GR"
+country_name = "Ελλάδα"
+phone = ["+30 210 4100818", "+30 210 4101057"]
+fax = "+30 210 4100626"
+email = "info@x-trans.gr"
+hours = "Δευτέρα–Παρασκευή 08:00–17:00"
+# Map (OpenStreetMap embed — no API key, no cookies). Coordinates approximate Vasiladiou 6, Piraeus.
+map_lat = "37.9430"
+map_lon = "23.6360"
+
+
+# Subscription
+[subscription]
+enable = false
+# mailchimp subsciption
+mailchimp_form_action = "https://gmail.us4.list-manage.com/subscribe/post?u=463ee871f45d2d93748e77cad&amp;id=a0a2c6d074" # replace this url with yours
+mailchimp_form_name = "b_463ee871f45d2d93748e77cad_a0a2c6d074"

@@ -1,0 +1,70 @@
+{{ define "main" }}
+  {{ partial "page-header" . }}
+
+  {{ $c := site.Params.company }}
+  {{ $lat := $c.map_lat | float }}
+  {{ $lon := $c.map_lon | float }}
+  {{ $d := 0.004 }}
+  {{ $bbox := printf "%v,%v,%v,%v" (sub $lon $d) (sub $lat $d) (add $lon $d) (add $lat $d) }}
+
+  <section class="section-sm">
+    <div class="container">
+      <div class="row gx-5">
+        <!-- Contact details -->
+        <div class="lg:col-5 mb-10">
+          {{ with .Content }}<div class="content mb-8">{{ . }}</div>{{ end }}
+
+          <ul class="space-y-6">
+            <li class="flex items-start">
+              <i class="fa-solid fa-location-dot text-primary dark:text-darkmode-primary mr-4 mt-1 text-xl"></i>
+              <span>
+                <strong class="block">{{ T "address" | default "Διεύθυνση" }}</strong>
+                {{ $c.street }}, {{ $c.city }} {{ $c.postal_code }}, {{ $c.country_name }}
+              </span>
+            </li>
+            <li class="flex items-start">
+              <i class="fa-solid fa-phone text-primary dark:text-darkmode-primary mr-4 mt-1 text-xl"></i>
+              <span>
+                <strong class="block">{{ T "phone" | default "Τηλέφωνο" }}</strong>
+                {{ range $c.phone }}
+                  <a class="hover:text-primary dark:hover:text-darkmode-primary block" href="tel:{{ . | replaceRE `[^0-9+]` `` }}">{{ . }}</a>
+                {{ end }}
+              </span>
+            </li>
+            <li class="flex items-start">
+              <i class="fa-solid fa-fax text-primary dark:text-darkmode-primary mr-4 mt-1 text-xl"></i>
+              <span>
+                <strong class="block">Fax</strong>
+                {{ $c.fax }}
+              </span>
+            </li>
+            <li class="flex items-start">
+              <i class="fa-solid fa-envelope text-primary dark:text-darkmode-primary mr-4 mt-1 text-xl"></i>
+              <span>
+                <strong class="block">Email</strong>
+                <a class="hover:text-primary dark:hover:text-darkmode-primary" href="mailto:{{ $c.email }}">{{ $c.email }}</a>
+              </span>
+            </li>
+            <li class="flex items-start">
+              <i class="fa-solid fa-clock text-primary dark:text-darkmode-primary mr-4 mt-1 text-xl"></i>
+              <span>
+                <strong class="block">{{ T "hours" | default "Ωράριο" }}</strong>
+                {{ $c.hours }}
+              </span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Map -->
+        <div class="lg:col-7">
+          <iframe
+            title="{{ $c.legal_name }} — {{ $c.city }}"
+            class="h-full min-h-[400px] w-full rounded-xl border-0"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.openstreetmap.org/export/embed.html?bbox={{ $bbox }}&layer=mapnik&marker={{ $lat }},{{ $lon }}"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+{{ end }}

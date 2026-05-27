@@ -1,0 +1,13 @@
+################ Greek language (default) ##################
+[el]
+label = "ΕΛ"
+locale = "el-gr"
+contentDir = "content/greek"
+weight = 1
+
+################ English language ##################
+[en]
+label = "EN"
+locale = "en-us"
+contentDir = "content/english"
+weight = 2

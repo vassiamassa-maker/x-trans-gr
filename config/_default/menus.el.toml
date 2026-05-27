@@ -1,0 +1,44 @@
+############# Greek navigation ##############
+
+# main menu
+[[main]]
+name = "Αρχική"
+url = "/"
+weight = 1
+
+[[main]]
+name = "Η Εταιρεία"
+url = "/etaireia/"
+weight = 2
+
+[[main]]
+name = "Υπηρεσίες"
+url = "/ypiresies/"
+weight = 3
+
+[[main]]
+name = "Ισολογισμός"
+url = "/isologismos/"
+weight = 4
+
+[[main]]
+name = "Επικοινωνία"
+url = "/epikoinonia/"
+weight = 5
+
+
+# footer menu
+[[footer]]
+name = "Η Εταιρεία"
+url = "/etaireia/"
+weight = 1
+
+[[footer]]
+name = "Υπηρεσίες"
+url = "/ypiresies/"
+weight = 2
+
+[[footer]]
+name = "Επικοινωνία"
+url = "/epikoinonia/"
+weight = 3
