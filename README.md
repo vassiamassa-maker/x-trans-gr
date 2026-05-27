@@ -71,7 +71,12 @@ Connect the repo in the Cloudflare dashboard with:
 | Framework preset | Hugo |
 | Build command | `npm run build` |
 | Build output directory | `public` |
-| Environment variables | `HUGO_VERSION = 0.162.0`, `GO_VERSION = 1.23.3`, `NODE_VERSION = 20` |
+| Environment variables | `HUGO_VERSION = 0.162.0`, `GO_VERSION = 1.23.3`, `NODE_VERSION = 24` |
+
+> **Node 24+ is required.** Hugo's Tailwind CSS v4 step runs the Tailwind CLI with Node's
+> `--permission` flag, which only exists from Node 23.5 onward — Node 20/22 builds fail with
+> `node: bad option: --permission`. The `.nvmrc` pins Node 24; note the dashboard `NODE_VERSION`
+> environment variable **overrides** `.nvmrc`, so it must also be 24.
 
 Then add `www.x-trans.gr` as a custom domain (HTTPS is automatic). The
 [`static/_redirects`](static/_redirects) file 301-redirects the old Blogger URLs to preserve SEO.
