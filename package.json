@@ -6,7 +6,7 @@
   "author": "zeon.studio",
   "scripts": {
     "dev": "concurrently \"node scripts/themeGenerator.js --watch\" \"hugo server\"",
-    "build": "node scripts/themeGenerator.js && hugo --gc --minify --templateMetrics --templateMetricsHints --forceSyncStatic",
+    "build": "node scripts/themeGenerator.js && hugo --gc --minify --forceSyncStatic ${CF_PAGES_URL:+-b \"$CF_PAGES_URL\"} ${HUGO_BASEURL:+-b \"$HUGO_BASEURL\"}",
     "preview": "node scripts/themeGenerator.js && hugo server --disableFastRender --navigateToChanged --templateMetrics --templateMetricsHints --watch --forceSyncStatic -e production --minify",
     "dev:example": "concurrently \"node scripts/themeGenerator.js --watch\" \"hugo server -s exampleSite\"",
     "build:example": "cd exampleSite && node ../scripts/themeGenerator.js && hugo --gc --minify --templateMetrics --templateMetricsHints --forceSyncStatic",
