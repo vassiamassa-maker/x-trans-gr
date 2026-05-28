@@ -131,8 +131,8 @@ fax = "+30 210 4100626"
 email = "info@x-trans.gr"
 hours = "Δευτέρα–Παρασκευή 08:00–17:00"
 # Map (OpenStreetMap embed — no API key, no cookies). Coordinates approximate Vasiladiou 6, Piraeus.
-map_lat = "37.951795"
-map_lon = "23.649026"
+map_lat = "37.980122"
+map_lon = "23.599159"
 
 # Subscription
 [subscription]
