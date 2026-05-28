@@ -17,8 +17,8 @@ url = "/ypiresies/"
 weight = 3
 
 [[main]]
-name = "Ισολογισμός"
-url = "/isologismos/"
+name = "Λήψεις"
+url = "/lipseis/"
 weight = 4
 
 [[main]]

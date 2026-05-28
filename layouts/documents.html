@@ -16,7 +16,7 @@
                     class="bg-light dark:bg-darkmode-light hover:text-primary dark:hover:text-darkmode-primary flex items-center justify-between rounded-lg px-6 py-5 transition"
                     {{ if .external }}target="_blank" rel="noopener"{{ end }}>
                     <span class="flex items-center font-medium">
-                      <i class="fa-regular fa-file-pdf text-primary dark:text-darkmode-primary mr-4 text-2xl"></i>
+                      <i class="{{ .icon | default `fa-regular fa-file` }} text-primary dark:text-darkmode-primary mr-4 text-2xl"></i>
                       {{ .label }}
                     </span>
                     <i class="fa-solid fa-download"></i>

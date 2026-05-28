@@ -17,8 +17,8 @@ url = "/services/"
 weight = 3
 
 [[main]]
-name = "Financial Statements"
-url = "/financial-statements/"
+name = "Downloads"
+url = "/downloads/"
 weight = 4
 
 [[main]]

@@ -4,13 +4,19 @@
 # Greek pages
 /2015/03/x-trans-logistics.html              /etaireia/        301
 /2015/03/x-trans.html                        /ypiresies/       301
-/p/i.html                                    /isologismos/     301
+/p/i.html                                    /lipseis/         301
 /p/blog-page.html                            /epikoinonia/     301
 
+# Renamed (Ισολογισμός → Λήψεις, Financial Statements → Downloads)
+/isologismos/                                /lipseis/         301
+/isologismos                                 /lipseis/         301
+
 # English pages
-/p/welcome-established-in-athens-in-order.html   /en/about/      301
-/p/blog-page_5.html                              /en/services/   301
-/p/normal-0-false-false-false-el-x-none-x.html   /en/contact/    301
+/p/welcome-established-in-athens-in-order.html   /en/about/             301
+/p/blog-page_5.html                              /en/services/          301
+/p/normal-0-false-false-false-el-x-none-x.html   /en/contact/           301
+/en/financial-statements/                        /en/downloads/         301
+/en/financial-statements                         /en/downloads/         301
 
 # Old Blogger feeds → home
 /feeds/*                                     /                 301
