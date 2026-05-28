@@ -19,7 +19,7 @@ weight = 2
   # English overrides of the Greek root [company] block (params.toml).
   # Phone, fax, email and map coordinates are inherited from the root.
   [en.params.company]
-  street = "6 Vasiladiou & Mykalis"
-  city = "Piraeus"
+  street = "Street 3, No. 1111, Block 11, P.O. Box 3118"
+  city = "Schistos Industrial Park"
   country_name = "Greece"
   hours = "Monday–Friday, 08:00–17:00 (EET, UTC+2)"

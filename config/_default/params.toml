@@ -121,16 +121,16 @@ map_marker = "images/marker.png"
 # Company contact details (used by the contact page, footer and JSON-LD schema)
 [company]
 legal_name = "X-TRANS Ε.Π.Ε."
-street = "Βασιλαδίου 6 & Μυκάλης"
-city = "Πειραιάς"
-postal_code = "18540"
+street = "Οδός 3, Αρ. 1111, Ο.Τ. 11, Τ.Θ. 3118"
+city = "Βιομηχανικό Πάρκο Σχιστού"
+postal_code = "18863"
 country = "GR"
 country_name = "Ελλάδα"
 phone = ["+30 210 4100818", "+30 210 4101057"]
 fax = "+30 210 4100626"
 email = "info@x-trans.gr"
 hours = "Δευτέρα–Παρασκευή 08:00–17:00"
-# Map (OpenStreetMap embed — no API key, no cookies). Coordinates approximate Vasiladiou 6, Piraeus.
+# Map (OpenStreetMap embed — no API key, no cookies). Coordinates: Schistos Industrial Park.
 map_lat = "37.980122"
 map_lon = "23.599159"
 
