@@ -1,7 +1,7 @@
 ---
 title: "Contact"
 meta_title: "Contact | X-TRANS Ltd"
-description: "Contact X-TRANS Ltd — 6 Vasiladiou & Mykalis, Piraeus. Tel. +30 210 4100818, email info@x-trans.gr."
+description: "Contact X-TRANS Ltd — Block 11 – 1111, street 3 P.O. 3118, P.C. 18863 Industrial Park Schisto Attica Tel. +30 210 4100818, email info@x-trans.gr."
 layout: "contact"
 url: "/en/contact/"
 translationKey: "contact"
