@@ -8,7 +8,7 @@ logistics company in Piraeus. Built with [Hugo](https://gohugo.io) + Tailwind CS
 
 - [Hugo **extended**](https://gohugo.io/installation/) ≥ 0.158 (developed on 0.162)
 - [Go](https://go.dev) ≥ 1.23 (Hugo Modules)
-- [Node.js](https://nodejs.org) ≥ 18 + npm (Tailwind build pipeline)
+- [Node.js](https://nodejs.org) **≥ 24** + npm (Tailwind CSS v4 needs Node's `--permission` flag, introduced in Node 23.5 — see Deployment notes below)
 
 ## Local development
 
@@ -31,10 +31,10 @@ content/greek/        Greek pages (default language, served at /)
 content/english/      English pages (served under /en/)
 data/theme.json       Brand colours + fonts (re-run build after editing)
 i18n/{el,en}.yaml     UI string translations
-layouts/              Project overrides (logo, header, services, financial, contact, json-ld, head)
+layouts/              Project overrides (logo, header, services, documents, contact, json-ld, head)
 assets/images/        Source images (Hugo processes → responsive WebP) — provenance in CREDITS.md
-static/_redirects     301s from the old Blogger URLs (Cloudflare Pages)
-static/docs/          Drop balance-sheet PDFs here
+static/_redirects     301s from old/renamed URLs (Cloudflare Pages)
+static/docs/          Drop downloadable files here (PDFs, xlsx, docx, …)
 themes/hugoplate/     Theme (do not edit; override in /layouts instead)
 ```
 
@@ -45,7 +45,7 @@ themes/hugoplate/     Theme (do not edit; override in /layouts instead)
 | Home | `/` | `/en/` |
 | Company / Η Εταιρεία | `/etaireia/` | `/en/about/` |
 | Services / Υπηρεσίες | `/ypiresies/` | `/en/services/` |
-| Balance sheet / Ισολογισμός | `/isologismos/` | `/en/financial-statements/` |
+| Downloads / Λήψεις | `/lipseis/` | `/en/downloads/` |
 | Contact / Επικοινωνία | `/epikoinonia/` | `/en/contact/` |
 
 Greek and English versions are linked via `translationKey` in each page's front matter.
@@ -54,9 +54,16 @@ Greek and English versions are linked via `translationKey` in each page's front 
 
 - **Company contact details / map** — `config/_default/params.toml` → `[company]` block (address,
   phones, email, hours, `map_lat`/`map_lon`). Used by the contact page, footer and JSON-LD schema.
+  English overrides (street / city / country_name) live in `config/_default/languages.toml` under
+  `[en.params.company]`; the remaining fields (phone, fax, email, postal code, coordinates) are
+  inherited automatically. The footer `copyright` uses the same pattern (`[en.params].copyright`
+  overrides the Greek default).
 - **Services** — edit the `service_groups` list in `content/{greek,english}/…` front matter.
-- **Balance-sheet PDFs** — put files in `static/docs/`, then uncomment/add the `documents:` list in
-  `content/greek/isologismos.md` and `content/english/financial-statements.md`.
+- **Downloadable files** (Λήψεις / Downloads page) — put files in `static/docs/`, then uncomment /
+  add entries in the `documents:` list in `content/greek/lipseis.md` and
+  `content/english/downloads.md`. Each entry takes `label`, `url`, optional `icon:`
+  (`fa-regular fa-file-pdf` / `…-excel` / `…-word` / `…-lines` / `…-image` / `…-zipper`; defaults to a
+  generic file icon) and optional `external: true` (opens in a new tab).
 - **Photos** — replace files in `assets/images/` (keep the same names) or update the `image:` paths.
 - **Brand colours / fonts** — `data/theme.json` (re-run `npm run build`).
 - **Analytics** — set the Cloudflare Web Analytics token in `params.toml` → `custom_script`
