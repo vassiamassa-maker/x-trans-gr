@@ -1,7 +1,7 @@
 ---
 title: "Επικοινωνία"
 meta_title: "Επικοινωνία | X-TRANS Ε.Π.Ε."
-description: "Επικοινωνήστε με την X-TRANS Ε.Π.Ε. — Βασιλαδίου 6 & Μυκάλης, Πειραιάς. Τηλ. +30 210 4100818, email info@x-trans.gr."
+description: "Επικοινωνήστε με την X-TRANS Ε.Π.Ε. — Ο.Τ 11 – ΟΔΟΣ 3 ΑΡ.1111, Τ.Θ.3118, Τ.Κ. 18863, Βιομηχανικό Πάρκο Σχιστού, Τηλ. +30 210 4100818, email info@x-trans.gr."
 layout: "contact"
 url: "/epikoinonia/"
 translationKey: "contact"
