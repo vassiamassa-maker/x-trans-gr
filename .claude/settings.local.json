@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rm -rf public resources)",
+      "Bash(npm run *)",
+      "Bash(echo \"build exit=$?\")",
+      "Read(//tmp/**)",
+      "Bash(python3 -c \"import re,sys; html=open\\('public/index.html'\\).read\\(\\); m=re.search\\(r'<div role=group aria-label=Language[^<]*<.+?</div>', html, re.S\\); print\\(m.group\\(0\\) if m else 'NOT FOUND'\\)\")",
+      "Bash(python3 -c \"import re,sys; html=open\\('public/en/index.html'\\).read\\(\\); m=re.search\\(r'<div role=group aria-label=Language[^<]*<.+?</div>', html, re.S\\); print\\(m.group\\(0\\) if m else 'NOT FOUND'\\)\")",
+      "Bash(python3 -c \"import re; html=open\\('public/ypiresies/index.html'\\).read\\(\\); m=re.search\\(r'<div role=group aria-label=Language[^<]*<.+?</div>', html, re.S\\); print\\(m.group\\(0\\) if m else 'NOT FOUND'\\)\")"
+    ]
+  }
+}

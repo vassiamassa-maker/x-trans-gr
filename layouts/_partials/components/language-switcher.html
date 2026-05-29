@@ -1,4 +1,4 @@
-<!-- Language List -->
+<!-- Language switcher — pill / segmented toggle (both languages visible) -->
 {{ if hugo.IsMultilingual }}
 {{ $class := .Class }}
 {{ $context := .Context }}
@@ -12,22 +12,27 @@
 {{ range $context.AllTranslations }}
   {{ $pageTranslations.Set .Language.Lang .Permalink }}
 {{ end }}
+{{ $names := dict "el" "Ελληνικά" "en" "English" }}
 
-<select class="{{ $class }}" aria-label="Language" onchange="location = this.value">
+<div role="group" aria-label="Language"
+  class="{{ $class }} inline-flex overflow-hidden rounded-full border border-border dark:border-darkmode-border text-sm font-semibold leading-none">
   {{ range site.Languages }}
-    {{/* Fill the dropdown with all known languages */}}
-    {{ $link := $pageTranslations.Get .Lang }}
-    {{ if $link }}
-      <option
-        id="{{ .Lang }}"
-        value="{{ $link }}"
-      {{ if eq .Lang $pageLang }}
-        selected
+    {{ $isActive := eq .Lang $pageLang }}
+    {{ $href := $pageTranslations.Get .Lang }}
+    {{ if $href }}
+      {{ if $isActive }}
+        <span aria-current="page"
+          class="px-3 py-1.5 bg-primary text-white dark:bg-darkmode-primary dark:text-dark cursor-default">
+          {{ .Label }}
+        </span>
+      {{ else }}
+        <a href="{{ $href }}"
+          aria-label="{{ index $names .Lang }}"
+          class="px-3 py-1.5 text-text-dark hover:bg-light dark:text-white dark:hover:bg-darkmode-body transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+          {{ .Label }}
+        </a>
       {{ end }}
-        >
-        {{ .Label }}
-      </option>
     {{ end }}
   {{ end }}
-</select>
+</div>
 {{ end }}
