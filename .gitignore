@@ -10,7 +10,6 @@ builds
 public
 resources
 jsconfig.json
-go.sum
 yarn.lock
 # Project-specific
 oldsite/
